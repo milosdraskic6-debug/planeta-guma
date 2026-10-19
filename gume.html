@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gume · Planeta Guma</title>
+  <meta name="description" content="Pretražite gume po dimenziji, proverite dostupnost i rezervišite online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="slike/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="zaglavlje" id="zaglavlje"></header>
+
+  <main>
+    <section class="zaglavlje-strane">
+      <div class="omotac">
+        <h1>Gume</h1>
+        <p>Izaberite dimenziju i pogledajte šta je na stanju. Gume rezervišete online, a mi vas zovemo da potvrdimo i dogovorimo montažu ili besplatnu dostavu. Ništa ne plaćate unapred.</p>
+      </div>
+    </section>
+
+    <div class="omotac" style="padding-bottom:64px">
+      <form class="pretraga-guma" id="pretraga">
+        <div class="polje"><label for="f-sirina">Širina</label><select id="f-sirina" name="sirina"></select></div>
+        <div class="polje"><label for="f-visina">Visina</label><select id="f-visina" name="visina"></select></div>
+        <div class="polje"><label for="f-precnik">Prečnik</label><select id="f-precnik" name="precnik"></select></div>
+        <div class="polje"><label for="f-sezona">Sezona</label>
+          <select id="f-sezona" name="sezona">
+            <option value="">Sve</option>
+            <option value="letnja">Letnja</option>
+            <option value="zimska">Zimska</option>
+            <option value="sve sezone">Za sve sezone</option>
+          </select>
+        </div>
+        <div class="polje"><label for="f-tip">Vozilo</label>
+          <select id="f-tip" name="tip">
+            <option value="">Sva</option>
+            <option value="auto">Putničko</option>
+            <option value="4x4">Džip (4x4)</option>
+            <option value="kombi">Kombi</option>
+            <option value="kamion">Kamion</option>
+            <option value="moto">Motor</option>
+          </select>
+        </div>
+        <div class="polje"><label for="f-proizvodjac">Proizvođač</label><select id="f-proizvodjac" name="proizvodjac"><option value="">Svi</option></select></div>
+        <button class="dugme dugme-tamno" type="submit">Prikaži</button>
+      </form>
+
+      <p class="rezultati-info" id="info" aria-live="polite">Učitavam gume…</p>
+      <div id="lista"></div>
+    </div>
+  </main>
+
+  <footer class="podnozje" id="podnozje"></footer>
+
+  <!-- Prozor za rezervaciju i proveru dostupnosti -->
+  <dialog id="prozor" aria-labelledby="prozor-naslov">
+    <div class="prozor-glava">
+      <h3 id="prozor-naslov">Rezervacija</h3>
+      <button class="prozor-zatvori" type="button" aria-label="Zatvori" data-zatvori>&times;</button>
+    </div>
+    <form class="prozor-telo" id="forma-upita">
+      <div class="izabrano" id="izabrano"></div>
+      <div class="red-polja">
+        <div class="polje"><label for="u-ime">Ime i prezime</label><input id="u-ime" required minlength="2" maxlength="100" autocomplete="name"></div>
+        <div class="polje"><label for="u-telefon">Telefon</label><input id="u-telefon" type="tel" required minlength="6" maxlength="30" autocomplete="tel"></div>
+      </div>
+      <div class="red-polja">
+        <div class="polje"><label for="u-kolicina">Broj guma</label>
+          <select id="u-kolicina"><option>1</option><option>2</option><option selected>4</option><option>5</option><option>6</option><option>8</option></select>
+        </div>
+        <div class="polje"><label for="u-lokacija">Lokacija</label><select id="u-lokacija"></select></div>
+      </div>
+      <div class="polje"><label for="u-poruka">Napomena (nije obavezno)</label><textarea id="u-poruka" maxlength="2000" placeholder="Na primer: montaža u subotu pre podne, ili adresa za dostavu"></textarea></div>
+      <div id="u-status" aria-live="polite"></div>
+      <button class="dugme dugme-zuto" type="submit" id="u-posalji">Pošalji rezervaciju</button>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/gume.js"></script>
+</body>
+</html>

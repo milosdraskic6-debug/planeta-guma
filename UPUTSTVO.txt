@@ -1,0 +1,39 @@
+PLANETA GUMA, NOV SAJT: UPUTSTVO
+=================================
+
+STRANE
+- index.html       Početna: pretraga guma po dimenziji, usluge sa cenama, lokacije
+- gume.html        Prodavnica guma: pretraga, rezervacija i provera dostupnosti
+- prodavnica.html  Ostali artikli: korpa i porudžbina, "pitaj za cenu"
+- admin.html       Za firmu: upiti kupaca, dodavanje guma i artikala, menjanje cena
+
+Kako da otvoriš sajt: dvaput klikni na index.html. Treba ti internet,
+jer se proizvodi učitavaju iz baze (Supabase, projekat "planeta-guma").
+
+GDE STIŽU UPITI
+Svaka rezervacija, porudžbina i pitanje se čuva u bazi i pojavljuje na
+admin strani, na tabu "Upiti", sa imenom, telefonom i šta kupac traži.
+Ako hoćeš da upiti stižu i na email, upiši email u assets/config.js,
+u red emailZaObavestenja. Prvi upit pošalje mejl za potvrdu, koji treba
+jednom kliknuti.
+
+ADMIN NALOG (uradi jednom)
+1. Otvori supabase.com, projekat "planeta-guma".
+2. Levo: Authentication, pa Users, pa "Add user" i "Create new user".
+3. Upiši email i lozinku i uključi "Auto Confirm User".
+4. Javi Claude-u taj email, da ga upiše kao admina.
+Posle toga se na admin.html prijavljuješ tim emailom i lozinkom.
+
+PODACI FIRME
+Telefoni, adrese, radno vreme i email su u assets/config.js.
+Boje i fontovi su na vrhu fajla assets/style.css.
+
+KAKO DA SAJT BUDE NA INTERNETU (besplatno, za pokazivanje)
+1. Otvori app.netlify.com/drop
+2. Prevuci ceo folder planeta-guma u prozor.
+3. Dobiješ link koji možeš da pošalješ firmi.
+
+NAPOMENA ZA PONUDU
+Gume, cene i usluge su preuzete sa njihovog sajta. Količine na stanju
+su primer, firma ih unosi sama u admin strani. Slike proizvoda se dodaju
+preko linka u admin strani.

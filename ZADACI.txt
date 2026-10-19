@@ -1,0 +1,44 @@
+PLANETA GUMA: ŠTA JE URAĐENO I ŠTA JOŠ OSTAJE
+=============================================
+
+URAĐENO (probna verzija)
+[x] Admin nalog: milos.draskic6@gmail.com (email je bio upisan kao
+    "gmail.lcom", ispravljeno)
+[x] Cene se pišu sa tačkom: 3.469 din
+[x] Slike svih 8 guma (preuzete sa planetaguma.com, sajta same firme)
+[x] Slike za 6 od 8 artikala u prodavnici (besplatne, otvorene licence)
+[x] Tri fotografije radionice na početnoj strani (privremene)
+[x] Zasluge za fotografije u dnu svake strane
+[x] Kartice sa brojkama bez kosih pruga, "Česta pitanja" poravnata levo
+[x] Probna rezervacija poslata i sačuvana u bazi
+
+
+TVOJI ZADACI
+[ ] 1. PROVERI ADMIN STRANU
+       Otvori admin.html i prijavi se svojim emailom i lozinkom.
+       Na tabu "Upiti" treba da vidiš "TEST Claude (obrisati)".
+       Obriši ga. Tako proveravaš i brisanje.
+
+[ ] 2. EMAIL ZA UPITE (nije obavezno)
+       Ako hoćeš da svaka rezervacija stiže i na email, javi Claude-u
+       na koji. Napomena: taj email se vidi u kodu sajta.
+
+[ ] 3. SLIKE KOJE FIRMA TREBA DA POŠALJE (za pravu verziju)
+       Sadašnje slike radionice, akumulatora, klime, perionice i
+       TPMS senzora su tuđe, besplatne i samo za probu. Firma neka
+       pošalje svoje:
+       [ ] radnja na Ceraku i Železniku spolja
+       [ ] radionica unutra: montaža, balansiranje
+       [ ] police sa gumama ili hotel za gume
+       [ ] kese za gume i "No Problem" kit (nemaju sliku nijednu)
+       [ ] logo kao fajl (.png ili .svg), ako postoji
+       Stavi ih u folder  planeta-guma\slike  i javi Claude-u.
+
+[ ] 4. DOGOVOR SA FIRMOM
+       Slike guma su sa njihovog sajta. Dok je sajt njihov, to je
+       u redu, ali im napomeni da ih koristiš.
+
+
+SLEDEĆE ŠTO CLAUDE MOŽE
+- postavljanje sajta online, da dobiješ link za firmu
+- zamena privremenih slika kad stignu prave

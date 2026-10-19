@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prodavnica · Planeta Guma</title>
+  <meta name="description" content="Ulja, akumulatori, felne, delovi i oprema. Poručite online, preuzmite u radnji.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="slike/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="zaglavlje" id="zaglavlje"></header>
+
+  <main>
+    <section class="zaglavlje-strane">
+      <div class="omotac">
+        <h1>Prodavnica</h1>
+        <p>Ulja, akumulatori, felne, delovi, oprema i usluge. Dodajte u korpu i pošaljite porudžbinu, a mi vas zovemo da potvrdimo. Plaćate pri preuzimanju. Gume su u <a href="gume.html">posebnoj prodavnici</a>.</p>
+      </div>
+    </section>
+
+    <div class="omotac" style="padding-bottom:96px">
+      <div class="filteri" id="kategorije" role="group" aria-label="Kategorije"></div>
+      <p class="rezultati-info" id="info" aria-live="polite">Učitavam artikle…</p>
+      <div class="mreza" id="mreza"></div>
+    </div>
+  </main>
+
+  <footer class="podnozje" id="podnozje"></footer>
+
+  <button class="dugme dugme-zuto korpa-dugme" id="korpa-dugme" type="button">Korpa <span class="korpa-broj" id="korpa-broj">0</span></button>
+
+  <!-- Korpa i porudžbina -->
+  <dialog id="korpa" aria-labelledby="korpa-naslov">
+    <div class="prozor-glava">
+      <h3 id="korpa-naslov">Vaša korpa</h3>
+      <button class="prozor-zatvori" type="button" aria-label="Zatvori" data-zatvori>&times;</button>
+    </div>
+    <form class="prozor-telo" id="forma-porudzbine">
+      <div id="stavke"></div>
+      <div class="red-polja">
+        <div class="polje"><label for="p-ime">Ime i prezime</label><input id="p-ime" required minlength="2" maxlength="100" autocomplete="name"></div>
+        <div class="polje"><label for="p-telefon">Telefon</label><input id="p-telefon" type="tel" required minlength="6" maxlength="30" autocomplete="tel"></div>
+      </div>
+      <div class="red-polja">
+        <div class="polje"><label for="p-email">Email (nije obavezno)</label><input id="p-email" type="email" maxlength="200" autocomplete="email"></div>
+        <div class="polje"><label for="p-lokacija">Preuzimanje</label><select id="p-lokacija"></select></div>
+      </div>
+      <div class="polje"><label for="p-poruka">Napomena (nije obavezno)</label><textarea id="p-poruka" maxlength="2000" placeholder="Na primer: marka i model vozila za akumulator"></textarea></div>
+      <div id="p-status" aria-live="polite"></div>
+      <button class="dugme dugme-zuto" type="submit" id="p-posalji">Pošalji porudžbinu</button>
+    </form>
+  </dialog>
+
+  <!-- Pitanje za cenu -->
+  <dialog id="pitanje" aria-labelledby="pitanje-naslov">
+    <div class="prozor-glava">
+      <h3 id="pitanje-naslov">Pitajte za cenu</h3>
+      <button class="prozor-zatvori" type="button" aria-label="Zatvori" data-zatvori>&times;</button>
+    </div>
+    <form class="prozor-telo" id="forma-pitanja">
+      <div class="izabrano" id="pitanje-artikal"></div>
+      <div class="red-polja">
+        <div class="polje"><label for="q-ime">Ime i prezime</label><input id="q-ime" required minlength="2" maxlength="100" autocomplete="name"></div>
+        <div class="polje"><label for="q-telefon">Telefon</label><input id="q-telefon" type="tel" required minlength="6" maxlength="30" autocomplete="tel"></div>
+      </div>
+      <div class="polje"><label for="q-poruka">Šta vam treba?</label><textarea id="q-poruka" maxlength="2000" placeholder="Na primer: ulje za Golf 7 1.6 TDI, ili akumulator 60Ah"></textarea></div>
+      <div id="q-status" aria-live="polite"></div>
+      <button class="dugme dugme-zuto" type="submit" id="q-posalji">Pošalji pitanje</button>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/prodavnica.js"></script>
+</body>
+</html>

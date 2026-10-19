@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Admin · Planeta Guma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="slike/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="zaglavlje">
+    <div class="omotac">
+      <a class="logo" href="index.html"><span class="logo-znak"></span>Admin</a>
+      <button class="dugme dugme-okvir dugme-malo" id="odjava" type="button" hidden style="margin-left:auto;color:#fff">Odjavi se</button>
+    </div>
+  </header>
+
+  <main class="omotac" style="padding-bottom:64px">
+    <!-- Prijava -->
+    <form class="prijava" id="prijava" hidden>
+      <h2>Prijava za firmu</h2>
+      <div class="polje"><label for="a-email">Email</label><input id="a-email" type="email" required autocomplete="username"></div>
+      <div class="polje"><label for="a-lozinka">Lozinka</label><input id="a-lozinka" type="password" required autocomplete="current-password"></div>
+      <div id="a-status" aria-live="polite"></div>
+      <button class="dugme dugme-tamno" type="submit">Prijavi se</button>
+    </form>
+
+    <!-- Radni deo -->
+    <section id="radno" hidden>
+      <div class="admin-glava">
+        <div class="tabovi" role="tablist">
+          <button class="tab" role="tab" data-tab="upiti" aria-selected="true">Upiti <span class="broj-novih" id="broj-novih" hidden></span></button>
+          <button class="tab" role="tab" data-tab="gume" aria-selected="false">Gume</button>
+          <button class="tab" role="tab" data-tab="proizvodi" aria-selected="false">Prodavnica</button>
+        </div>
+        <button class="dugme dugme-okvir dugme-malo" id="osvezi" type="button">Osveži</button>
+      </div>
+      <div id="sadrzaj"></div>
+    </section>
+  </main>
+
+  <!-- Prozor za dodavanje i izmenu -->
+  <dialog id="izmena" aria-labelledby="izmena-naslov">
+    <div class="prozor-glava">
+      <h3 id="izmena-naslov">Izmena</h3>
+      <button class="prozor-zatvori" type="button" aria-label="Zatvori" data-zatvori>&times;</button>
+    </div>
+    <form class="prozor-telo" id="forma-izmene"></form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/admin.js"></script>
+</body>
+</html>

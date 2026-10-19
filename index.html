@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planeta Guma: gume, felne i servis na Ceraku i Železniku</title>
+  <meta name="description" content="Gume za sve sezone, felne, akumulatori, ulja i servis na Ceraku i Železniku. Rezervišite gume online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="slike/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="zaglavlje" id="zaglavlje"></header>
+
+  <main>
+    <!-- Početak: pretraga po dimenziji, a točak pored se menja po izabranoj dimenziji -->
+    <section class="pocetak">
+      <div class="omotac pocetak-mreza">
+        <div class="pocetak-tekst">
+          <h1>Gume na stanju, montaža isti dan</h1>
+          <p class="uvod">Unesite dimenziju sa boka gume, pogledajte šta imamo na stanju i rezervišite. Montaža na Ceraku ili Železniku.</p>
+          <p class="tocak-mere" id="tocak-mere" aria-live="polite"></p>
+        </div>
+
+        <div class="tocak-scena" aria-hidden="true">
+          <svg class="tocak" viewBox="-215 -215 430 430">
+            <rect class="tocak-tlo" x="-215" y="200" width="430" height="6"/>
+            <g id="tocak-okret">
+              <circle id="t-guma" r="180" class="t-guma"/>
+              <g id="t-sare" class="t-sare"></g>
+              <path id="t-krug-teksta" d="" fill="none"/>
+              <text class="t-natpis"><textPath id="t-natpis" href="#t-krug-teksta" startOffset="0"></textPath></text>
+              <g id="t-felna">
+                <circle r="100" class="t-felna-obod"/>
+                <circle r="90" class="t-felna-unutra"/>
+                <g class="t-felna-zbice">
+                  <path d="M-7-18L-14-88L14-88L7-18Z"/>
+                  <path d="M-7-18L-14-88L14-88L7-18Z" transform="rotate(72)"/>
+                  <path d="M-7-18L-14-88L14-88L7-18Z" transform="rotate(144)"/>
+                  <path d="M-7-18L-14-88L14-88L7-18Z" transform="rotate(216)"/>
+                  <path d="M-7-18L-14-88L14-88L7-18Z" transform="rotate(288)"/>
+                </g>
+                <circle r="22" class="t-felna-glavcina"/>
+                <circle r="9" class="t-felna-centar"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="omotac">
+        <form class="bok-gume" action="gume.html" method="get">
+          <p class="bok-gume-naslov">Dimenzija vaše gume, na primer 205/55 R16</p>
+          <div class="oznaka">
+            <label>Širina
+              <select name="sirina" id="p-sirina" aria-label="Širina"></select>
+            </label>
+            <span class="oznaka-znak" aria-hidden="true">/</span>
+            <label>Visina
+              <select name="visina" id="p-visina" aria-label="Visina"></select>
+            </label>
+            <span class="oznaka-znak" aria-hidden="true">R</span>
+            <label>Prečnik
+              <select name="precnik" id="p-precnik" aria-label="Prečnik"></select>
+            </label>
+            <button class="dugme dugme-zuto" type="submit">Pronađi gume</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Činjenice o firmi, brojke odbrojavaju kad se pojave -->
+    <section class="sekcija-brojke">
+      <div class="omotac">
+        <h2 class="sakriveno">Planeta Guma u brojkama</h2>
+        <div class="brojke">
+          <div class="brojka otkrij">
+            <div class="brojka-vrednost"><span data-odbroj="2006" data-bez-tacke>2006</span></div>
+            <div class="brojka-tekst">Godina osnivanja</div>
+            <div class="brojka-opis">Pre toga godine uvoza i veleprodaje guma.</div>
+          </div>
+          <div class="brojka otkrij">
+            <div class="brojka-vrednost"><span data-odbroj="10000">10.000</span><small>+</small></div>
+            <div class="brojka-tekst">Artikala u ponudi</div>
+            <div class="brojka-opis">Gume svih aktuelnih proizvođača, felne, ulja i akumulatori.</div>
+          </div>
+          <div class="brojka otkrij">
+            <div class="brojka-vrednost">24–48<small>h</small></div>
+            <div class="brojka-tekst">Besplatna dostava guma</div>
+            <div class="brojka-opis">Za porudžbine preko interneta, po celoj Srbiji.</div>
+          </div>
+          <div class="brojka otkrij">
+            <div class="brojka-vrednost"><span data-odbroj="3">3</span><small> god.</small></div>
+            <div class="brojka-tekst">Garancija na gume</div>
+            <div class="brojka-opis">Garancija proizvođača, izdaje se uz fiskalni račun.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marke: traka sa logoima koja klizi -->
+    <section class="marke" aria-labelledby="marke-naslov">
+      <div class="omotac marke-glava otkrij">
+        <h2 id="marke-naslov">Marke koje prodajemo</h2>
+        <p class="uvod">Gume svih aktuelnih proizvođača, od povoljnih do premium. Ne vidite svoju marku? Pitajte nas.</p>
+      </div>
+      <div class="traka">
+        <div class="traka-sadrzaj" id="traka-marki"></div>
+      </div>
+    </section>
+
+    <!-- Usluge sa cenama -->
+    <section class="sekcija sekcija-tamna" id="usluge">
+      <div class="omotac">
+        <div class="otkrij">
+          <h2>Servis i cene</h2>
+          <p class="uvod">Cene su za putnička vozila sa felnama do 14 inča. Za veće felne, kombi i džip pitajte nas za cenu.</p>
+        </div>
+
+        <div class="usluge-slike">
+          <figure class="usluga-slika otkrij"><img src="slike/usluga-vulkanizer.jpg" alt="Montaža gume na felnu" loading="lazy"><figcaption>Montaža i balansiranje</figcaption></figure>
+          <figure class="usluga-slika otkrij"><img src="slike/usluga-hotel-za-gume.jpg" alt="Police sa gumama u hotelu za gume" loading="lazy"><figcaption>Hotel za gume</figcaption></figure>
+          <figure class="usluga-slika otkrij"><img src="slike/usluga-reglaza.jpg" alt="Reglaža trapa na aparatu" loading="lazy"><figcaption>Reglaža trapa</figcaption></figure>
+          <figure class="usluga-slika otkrij"><img src="slike/usluga-felne.jpg" alt="Ispravljena alu felna" loading="lazy"><figcaption>Ispravljanje felni</figcaption></figure>
+          <figure class="usluga-slika otkrij"><img src="slike/usluga-klima.jpg" alt="Dugme auto klime" loading="lazy"><figcaption>Servis klime</figcaption></figure>
+        </div>
+
+        <div class="dve-kolone">
+          <ul class="cenovnik otkrij">
+            <li><div class="usluga"><strong>Montaža i balansiranje</strong><span>nove gume ili gume sa hotela, po točku</span></div><span class="cena">od 900 din</span></li>
+            <li><div class="usluga"><strong>Hotel za gume</strong><span>sezonsko čuvanje, mesečno po gumi</span></div><span class="cena">od 180 din</span></li>
+            <li><div class="usluga"><strong>Reglaža trapa</strong><span>na aparatu, putnička vozila</span></div><span class="cena">od 2.500 din</span></li>
+            <li><div class="usluga"><strong>Ispravljanje felni</strong><span>alu i čelične felne</span></div><span class="cena">od 3.000 din</span></li>
+          </ul>
+          <ul class="cenovnik otkrij">
+            <li><div class="usluga"><strong>Servis auto klime</strong><span>aparatom Robinair AC690PRO</span></div><span class="cena">5.900 din</span></li>
+            <li><div class="usluga"><strong>Dezinfekcija klime</strong><span>Wynn's tretman, oko 15 minuta</span></div><span class="cena">3.900 din</span></li>
+            <li><div class="usluga"><strong>Pumpanje guma azotom</strong><span>po gumi</span></div><span class="cena">150 din</span></li>
+            <li><div class="usluga"><strong>Akumulatori</strong><span>besplatna provera i ugradnja kupljenog</span></div><span class="cena">besplatno</span></li>
+          </ul>
+        </div>
+        <p class="otkrij" style="margin-top:28px;color:#c3c8cc">Radimo i mobilni vulkanizer na vašoj adresi u Beogradu, mehaničarske usluge, zamenu ulja i filtera i kompjutersku dijagnostiku.</p>
+      </div>
+    </section>
+
+    <!-- Prodavnica, ukratko, sa slikama kategorija -->
+    <section class="sekcija">
+      <div class="omotac">
+        <div class="dve-kolone otkrij">
+          <div>
+            <h2>Gume rezervišete, ostalo poručite</h2>
+            <p class="uvod">Gume rezervišete online, a mi vas pozovemo da potvrdimo dostupnost i dogovorimo montažu ili besplatnu dostavu. Ulja, akumulatore, felne i opremu poručujete iz prodavnice i preuzimate u radnji.</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <a class="dugme dugme-tamno" href="gume.html">Pogledaj gume</a>
+            <a class="dugme dugme-okvir" href="prodavnica.html">Otvori prodavnicu</a>
+          </div>
+        </div>
+        <div class="kategorije-slike">
+          <a class="kategorija-kartica otkrij" href="gume.html"><img src="slike/guma-wanli-sw312.jpg" alt="" loading="lazy"><span>Gume</span></a>
+          <a class="kategorija-kartica otkrij" href="prodavnica.html"><img src="slike/felne-alu.jpg" alt="" loading="lazy"><span>Felne</span></a>
+          <a class="kategorija-kartica otkrij" href="prodavnica.html"><img src="slike/akumulator-varta.jpg" alt="" loading="lazy"><span>Akumulatori</span></a>
+          <a class="kategorija-kartica otkrij" href="prodavnica.html"><img src="slike/castrol-ulje.jpg" alt="" loading="lazy"><span>Ulja</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Česta pitanja -->
+    <section class="sekcija" style="padding-top:0">
+      <div class="omotac pitanja">
+        <div class="pitanja-glava otkrij">
+          <h2>Česta pitanja</h2>
+        </div>
+        <div class="pitanja-lista">
+          <details class="pitanje otkrij">
+            <summary>Kako funkcioniše rezervacija guma?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Izaberete gume na sajtu i pošaljete rezervaciju sa imenom i telefonom. Zovemo vas u toku radnog vremena da potvrdimo da su gume tu i dogovorimo termin montaže ili dostavu. Ništa ne plaćate unapred: plaćate u radnji, ili pri preuzimanju ako gume šaljemo kurirom.</p></div>
+          </details>
+          <details class="pitanje otkrij">
+            <summary>Koliko košta montaža i balansiranje?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Za nove gume ili gume sa našeg hotela, od 900 din po točku za felne od 10 do 14 inča, 1.050 din za 15 do 17 inča, 1.550 din za 18 i 19 inča i 2.450 din za 20 inča i više. Na Železniku je vulkanizer 20% jeftiniji.</p></div>
+          </details>
+          <details class="pitanje otkrij">
+            <summary>Da li čuvate gume van sezone?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Da, u našem hotelu za gume, u tamnom i hladnom prostoru. Čuvanje guma ili felni je od 180 din mesečno po komadu, a celih točkova od 210 din.</p></div>
+          </details>
+          <details class="pitanje otkrij">
+            <summary>Da li dostavljate gume?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Gume poručene preko interneta dostavljamo besplatno po celoj Srbiji, obično za 24 do 48 sati. Za ostale artikle dostavu plaća primalac po cenovniku kurirske službe AKS.</p></div>
+          </details>
+          <details class="pitanje otkrij">
+            <summary>Možete li da dođete na moju adresu?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Da, imamo mobilnog vulkanizera koji menja gume na vašoj adresi u Beogradu. Pozovite nas da dogovorimo termin.</p></div>
+          </details>
+          <details class="pitanje otkrij">
+            <summary>Kako mogu da platim?<span class="pitanje-ikona" aria-hidden="true"></span></summary>
+            <div class="pitanje-odgovor"><p>Gotovinom, karticama Visa, Mastercard, Maestro, Dina i American Express, virmanom, ili na rate: do 12 rata bez kamate karticama Banca Intesa i do 6 rata karticama Komercijalne banke, čekovima i Dina karticom.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lokacije -->
+    <section class="sekcija" id="kontakt" style="padding-top:0">
+      <div class="omotac">
+        <h2 class="otkrij">Dve lokacije u Beogradu</h2>
+        <div class="lokacije" id="lokacije"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="podnozje" id="podnozje"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/tocak.js"></script>
+  <script>
+    nacrtajZaglavlje("Početna");
+    nacrtajPodnozje();
+
+    // Ponuđene dimenzije u pretrazi
+    const popuni = (id, vrednosti, izabrano) => {
+      document.getElementById(id).innerHTML = vrednosti
+        .map((v) => `<option value="${v}"${v === izabrano ? " selected" : ""}>${v}</option>`).join("");
+    };
+    const raspon = (od, doo, korak) => Array.from({ length: Math.floor((doo - od) / korak) + 1 }, (_, i) => od + i * korak);
+    popuni("p-sirina", raspon(125, 355, 10), 205);
+    popuni("p-visina", raspon(25, 85, 5), 55);
+    popuni("p-precnik", raspon(12, 24, 1), 16);
+
+    pokreniTocak(["p-sirina", "p-visina", "p-precnik"]);
+
+    // Marke: niz se ponavlja dva puta da traka klizi bez prekida
+    const MARKE = [
+      ["michelin.png", "Michelin"], ["continental.jpg", "Continental"], ["goodyear.png", "Goodyear"],
+      ["pirelli.jpg", "Pirelli"], ["tigar.png", "Tigar"], ["sava.png", "Sava"], ["hankook.jpg", "Hankook"],
+      ["dunlop.png", "Dunlop"], ["nokian.png", "Nokian Tyres"], ["bfgoodrich.png", "BFGoodrich"],
+      ["barum.jpg", "Barum"], ["matador.gif", "Matador"], ["fulda.jpg", "Fulda"], ["kleber.png", "Kleber"],
+      ["debica.png", "Dębica"], ["kelly.jpg", "Kelly"], ["taurus.png", "Taurus"], ["vredestein.jpeg", "Vredestein"],
+    ];
+    const logoi = (sakrij) => MARKE.map(([f, ime]) =>
+      `<span class="marka"><img src="slike/marke/${f}" alt="${sakrij ? "" : ime}" loading="lazy"></span>`).join("");
+    document.getElementById("traka-marki").innerHTML =
+      `<span class="traka-pola">${logoi(false)}</span><span class="traka-pola" aria-hidden="true">${logoi(true)}</span>`;
+
+    // Lokacije
+    document.getElementById("lokacije").innerHTML = K.lokacije.map((l) => `
+      <div class="lokacija otkrij">
+        <h3>${esc(l.ime)}</h3>
+        <p>${esc(l.adresa)}</p>
+        <p>${l.telefoni.map((t) => `<a href="tel:${t.replaceAll(" ", "")}">${esc(t)}</a>`).join(", ")}</p>
+        <p>${l.radnoVreme.map(esc).join("<br>")}</p>
+        ${l.napomena ? `<p class="napomena">${esc(l.napomena)}</p>` : ""}
+        <p style="margin-top:12px"><a class="dugme dugme-okvir dugme-malo" href="${esc(l.mapa)}" target="_blank" rel="noopener">Otvori mapu</a></p>
+      </div>`).join("");
+
+    pokreniAnimacije();
+  </script>
+</body>
+</html>
