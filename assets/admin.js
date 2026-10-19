@@ -123,11 +123,12 @@ function nacrtajUpite() {
         <td>${esc(u.lokacija || "")}</td>
         <td>${esc(u.poruka || "")}</td>
         <td><select data-status="${u.id}">${opcije}</select></td>
+        <td><button class="dugme dugme-okvir dugme-malo" data-obrisi="upiti:${u.id}">Obriši</button></td>
       </tr>`;
   }).join("");
   el("sadrzaj").innerHTML = `
     <div class="tabela-omotac"><table>
-      <thead><tr><th>Vreme</th><th>Vrsta</th><th>Kupac</th><th>Šta traži</th><th>Lokacija</th><th>Napomena</th><th>Status</th></tr></thead>
+      <thead><tr><th>Vreme</th><th>Vrsta</th><th>Kupac</th><th>Šta traži</th><th>Lokacija</th><th>Napomena</th><th>Status</th><th></th></tr></thead>
       <tbody>${redovi}</tbody>
     </table></div>`;
 }
@@ -229,7 +230,8 @@ el("sadrzaj").addEventListener("click", async (e) => {
   }
   if (ob) {
     const [t, id] = ob.dataset.obrisi.split(":");
-    if (!confirm("Da li sigurno brišete? Ovo ne može da se vrati. Ako samo hoćete da sakrijete, isključite \"Na sajtu\".")) return;
+    const savet = t === "upiti" ? "" : " Ako samo hoćete da sakrijete, isključite \"Na sajtu\".";
+    if (!confirm("Da li sigurno brišete? Ovo ne može da se vrati." + savet)) return;
     const { error } = await baza.from(t).delete().eq("id", id);
     if (error) alert("Brisanje nije uspelo.");
     ucitajSve();
